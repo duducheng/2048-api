@@ -8,9 +8,13 @@ A 2048 game api for training supervised learning (imitation learning) or reinfor
     * [`displays.py`](game2048/displays.py): the `Display` class with instances, to show the `Game` state.
     * [`expectimax/`](game2048/expectimax): a powerful ExpectiMax agent by [here](https://github.com/nneonneo/2048-ai).
 * [`explore.ipynb`](explore.ipynb): introduce how to use the `Agent`, `Display` and `Game`.
-* [`static/`](static/): html assets for web app.
-* [`webapp.py`](webapp.py): run the web app demo.
+* [`static/`](static/): frontend assets (based on Vue.js) for web app.
+* [`webapp.py`](webapp.py): run the web app (backend) demo.
 * [`evaluate.py`](evaluate.py): evaluate your self-defined agent.
+
+# Requirements
+* code only tested on linux system (ubuntu 16.04)
+* Python 3 (Anaconda 3.6.3 specifically) with numpy and flask
 
 # To define your own agents
 ```python
@@ -30,7 +34,6 @@ class YourOwnAgent(Agent):
 ```
 
 # To compile the pre-defined ExpectiMax agent
-Linux preferred. 
 
 ```bash
 cd game2048/expectimax
