@@ -5,7 +5,7 @@ import numpy as np
 
 class Game:
 
-    def __init__(self, size=4, score_to_win=np.inf, displayer=None,
+    def __init__(self, size=4, score_to_win=None, displayer=None,
                  rate_2=0.5, random=False):
         '''
 
@@ -16,6 +16,8 @@ class Game:
         :param random: a random initialized board (a harder mode)
         '''
         self.size = size
+        if score_to_win is None:
+            score_to_win = np.inf
         self.score_to_win = score_to_win
         self.displayer = displayer
         self.__rate_2 = rate_2

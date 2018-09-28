@@ -1,0 +1,118 @@
+.row-header {
+    margin: 0px auto;
+    padding: 0px 0px;
+}
+
+.row-content {
+    margin: 0px auto;
+    padding: 20px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+.row-footer {
+    margin: 0px auto;
+    padding: 10px 0px;
+}
+
+.navbar-default {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    background: #d3d4d5;
+    color: #082234;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+    background: #d3d4d5;
+    color: #082234;
+}
+
+.navbar-default .navbar-nav>.active>a:focus {
+    background: #d3d4d5;
+    color: #082234;
+}
+
+.navbar-default .navbar-nav>.open>a {
+    background: #d3d4d5;
+    color: #082234;
+}
+
+.navbar-default .navbar-nav>.open>a:hover {
+    background: #d3d4d5;
+    color: #082234;
+}
+
+.navbar-default .navbar-nav>.open>a:focus {
+    background: #d3d4d5;
+    color: #082234;
+}
+
+.jumbotron {
+    margin: 0px auto;
+    padding: 70px 30px;
+    background-image: url('../images/background-jumbotron.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    color: floralwhite;
+}
+
+.carousel {
+    background: #d3d4d5;
+}
+
+.carousel .item {
+    height: 300px;
+}
+
+.carousel .item img {
+    left: 0;
+    min-height: 300px;
+    position: absolute;
+    top: 0;
+}
+
+address {
+    color: #0f0f0f;
+    font-size: 80%;
+    margin: 0px;
+}
+
+body {
+    padding: 20px 0px 0px 0px;
+    z-index: 0;
+}
+
+.tab-content {
+    border-bottom: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    padding: 10px;
+}
+
+.affix {
+    top: 100px;
+}
+
+#carouselButtons {
+    bottom: 0px;
+    position: absolute;
+    right: 0px;
+}
+
+table {
+    border: 5px solid;
+}
+
+table span {
+    font-size: 30px;
+}
+
+td {
+    border: 3px solid;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+}
