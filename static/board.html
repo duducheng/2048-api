@@ -10,87 +10,87 @@
     <link href="static/style.css" rel="stylesheet">
     <script src="static/vue.js"></script>
     <script src="static/vue-resource.js"></script>
-    <link href="static/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 
 </head>
 
 
 <body>
 
-<h1 align="center">2048 Game</h1>
-<h4 align="center">Use ↑ ↓ ← → to play, any other keys for AUTO by your agent.</h4>
+    <h1 align="center">2048 Game</h1>
+    <h4 align="center">Use ↑ ↓ ← → to play, or any other keys for "AUTO-mode" by your agent.</h4>
 
-<div class="container" id="app">
-    <div class="row row-content">
+    <div class="container" id="app">
+        <div class="row row-content">
 
-        <div class="col-xs-6">
+            <div class="col-xs-6">
 
-            <h1>
-                Score: {{score}}
-            </h1>
+                <h1>
+                    Score: {{score}}
+                </h1>
 
-        </div>
+            </div>
 
-        <div class="col-xs-6" align="right">
+            <div class="col-xs-6" align="right">
 
-            <h1>
-                <span v-if="end==1">You lose!</span>
-                <span v-if="end==2">You win!</span>
-            </h1>
+                <h1>
+                    <span v-if="end==1">You lose!</span>
+                    <span v-if="end==2">You win!</span>
+                </h1>
 
-        </div>
-
-
-        <div class="col-xs-12">
-
-            <table align=center>
-                <tr v-for="row in board">
-                    <td v-for="item in row">
-                        <span v-if="item!=0">{{item}}</span>
-                    </td>
-                </tr>
-            </table>
-
-        </div>
-
-        <div class="col-xs-6">
-
-            <h3>
-                <span v-if="direction!=-1">Last move:</span>
-                <span v-if="direction==0">←</span>
-                <span v-if="direction==1">↓</span>
-                <span v-if="direction==2">→</span>
-                <span v-if="direction==3">↑</span>
-            </h3>
-
-        </div>
-
-        <div class="col-xs-6" align="right">
-
-            <h3>
-                Controlled by {{control}}
-            </h3>
-
-        </div>
-
-    </div>
-</div>
+            </div>
 
 
-<footer class="row-footer">
-    <div class="container">
-        <div class="row">
             <div class="col-xs-12">
-                <h3 align=center>
-                    Copyright © 2016-2018 <a href="https://github.com/duducheng">Jiancheng</a>
+
+                <table align=center>
+                    <tr v-for="row in board">
+                        <td v-for="item in row">
+                            <span v-if="item!=0">{{item}}</span>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="col-xs-6">
+
+                <h3>
+                    <span v-if="direction!=-1">Last move:</span>
+                    <span v-if="direction==0">←</span>
+                    <span v-if="direction==1">↓</span>
+                    <span v-if="direction==2">→</span>
+                    <span v-if="direction==3">↑</span>
                 </h3>
+
+            </div>
+
+            <div class="col-xs-6" align="right">
+
+                <h3>
+                    Controlled by {{control}}
+                </h3>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="row-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 align=center>
+                        Copyright © 2016-2018 <a href="https://github.com/duducheng">Jiancheng</a>
+                    </h3>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 
-<script src="static/app.js"></script>
+    <script src="static/app.js"></script>
 </body>
 
 </html>

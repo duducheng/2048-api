@@ -31,12 +31,23 @@ if __name__ == "__main__":
     GAME_SIZE = 4
     SCORE_TO_WIN = 2048
     APP_PORT = 5005
-    APP_HOST = "localhost"
+    APP_HOST = "0.0.0.0"
 
     from game2048.game import Game
-    from game2048.agents import ExpectiMaxAgent
-
     game = Game(size=GAME_SIZE, score_to_win=SCORE_TO_WIN)
-    agent = ExpectiMaxAgent(game=game)
+
+    try:
+        from game2048.agents import ExpectiMaxAgent
+        agent = ExpectiMaxAgent(game=game)
+    except:
+        from game2048.agents import RandomAgent
+        print("WARNING: Please compile the ExpectiMaxAgent first following the README.")
+        print("WARNING: You are now using a RandomAgent.")
+        agent = RandomAgent(game=game)
+
+    print("Run the webapp at http://<any address for your local host>:%s/" % APP_PORT)    
+    
     app = get_flask_app(game, agent)
     app.run(port=APP_PORT, threaded=False, host=APP_HOST)  # IMPORTANT: `threaded=False` to ensure correct behavior
+    
+    
