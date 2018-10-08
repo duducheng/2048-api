@@ -5,13 +5,11 @@ import numpy as np
 
 class Game:
 
-    def __init__(self, size=4, score_to_win=None, displayer=None,
-                 rate_2=0.5, random=False):
+    def __init__(self, size=4, score_to_win=None, rate_2=0.5, random=False, enable_rewrite_board=False):
         '''
 
         :param size: the size of the board
         :param score_to_win: the terminate score to indicate `win`
-        :param displayer:
         :param rate_2: the probability of the next element to be 2 (otherwise 4)
         :param random: a random initialized board (a harder mode)
         '''
@@ -19,7 +17,6 @@ class Game:
         if score_to_win is None:
             score_to_win = np.inf
         self.score_to_win = score_to_win
-        self.displayer = displayer
         self.__rate_2 = rate_2
         if random:
             self.__board = \
@@ -30,6 +27,7 @@ class Game:
             # initilize the board (with 2 entries)
             self._maybe_new_entry()
             self._maybe_new_entry()
+        self.enable_rewrite_board = enable_rewrite_board
         assert not self.end
 
     def move(self, direction):
@@ -51,15 +49,6 @@ class Game:
         self.__board = np.rot90(board_to_left, direction)
         self._maybe_new_entry()
 
-    def display(self):
-        if self.displayer:
-            if self.end == 2:
-                self.displayer.win(self)
-            elif self.end == 1:
-                self.displayer.lose(self)
-            else:
-                self.displayer.show(self)
-
     def __str__(self):
         board = "State:"
         for row in self.board:
@@ -73,6 +62,14 @@ class Game:
         '''`NOTE`: Setting board by indexing,
         i.e. board[1,3]=2, will not raise error.'''
         return self.__board.copy()
+
+    @board.setter
+    def board(self, x):
+        if self.enable_rewrite_board:
+            assert self.__board.shape == x.shape
+            self.__board = x.astype(self.__board.dtype)
+        else:
+            print("Disable to rewrite `board` manually.")
 
     @property
     def score(self):
