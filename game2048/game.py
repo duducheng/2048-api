@@ -46,8 +46,10 @@ class Game:
             board_to_left[row, len(core):] = 0
 
         # rotation to the original
+        old_board = self.board()
         self.__board = np.rot90(board_to_left, direction)
-        self._maybe_new_entry()
+        if old_board != self.__board
+            self._maybe_new_entry()
 
     def __str__(self):
         board = "State:"
