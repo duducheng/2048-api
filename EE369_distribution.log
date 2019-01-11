@@ -1,0 +1,4 @@
+Distribution:  Counter({1024: 26, 2048: 15, 512: 8, 256: 1})
+Total time: 3518.6618156433105, total step: 29638
+Average time per step: 0.11872129751141476s
+Average scores: @50 times 1233.92
