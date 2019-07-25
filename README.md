@@ -51,4 +51,4 @@ python webapp.py
 The code is under Apache-2.0 License.
 
 # For EE369 students from SJTU only
-Please read [here](EE369.md).
+Please read course project [requirements](EE369.md) and [description](Project2048.pdf). 
