@@ -33,7 +33,7 @@ class YourOwnAgent(Agent):
 
 ```
 
-# To compile the pre-defined ExpectiMax agent
+# To compile the pre-defined [ExpectiMax](https://github.com/nneonneo/2048-ai) agent
 
 ```bash
 cd game2048/expectimax
