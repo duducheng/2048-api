@@ -30,6 +30,7 @@ def get_flask_app(game, agent):
 if __name__ == "__main__":
     GAME_SIZE = 4
     SCORE_TO_WIN = float("inf")
+    SCORE_TO_WIN = 2048
     APP_PORT = 5005
     APP_HOST = "0.0.0.0"
 
