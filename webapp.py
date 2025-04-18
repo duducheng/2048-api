@@ -11,12 +11,12 @@ def get_flask_app(game, agent):
     @app.route("/board", methods=['GET', 'POST'])
     def get_board():
         direction = -1
-        control = "USER"
+        control = "User"
         if request.method == "POST":
             direction = request.json
             if direction == -1:
                 direction = agent.step()
-                control = 'AGENT'
+                control = 'Intelligent Agent'
             game.move(direction)
         return jsonify({"board": game.board.tolist(),
                         "score": game.score,
@@ -29,7 +29,7 @@ def get_flask_app(game, agent):
 
 if __name__ == "__main__":
     GAME_SIZE = 4
-    SCORE_TO_WIN = 2048
+    SCORE_TO_WIN = float("inf")
     APP_PORT = 5005
     APP_HOST = "0.0.0.0"
 
@@ -39,7 +39,8 @@ if __name__ == "__main__":
     try:
         from game2048.agents import ExpectiMaxAgent
         agent = ExpectiMaxAgent(game=game)
-    except:
+    except ImportError as e:
+        print(e)
         from game2048.agents import RandomAgent
         print("WARNING: Please compile the ExpectiMaxAgent first following the README.")
         print("WARNING: You are now using a RandomAgent.")
